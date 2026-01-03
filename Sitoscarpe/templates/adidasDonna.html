@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adidas Donna - EnnoShoes</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/adidasDonna.css') }}">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">EnnoShoes</div>
+        <nav>
+            <ul>
+
+                <li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+                <li><a href="{{ url_for('serve_page', filename='Contact.html') }}">Contatti</a></li>
+                <li><a href="{{ url_for('serve_page', filename='TerminiCondizioni.html') }}">Termini e Condizioni</a></li>
+                <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+                <li><a href="{{ url_for('login_page') }}">Accedi</a></li>
+                <li><a href="{{ url_for('register_page') }}">Registrati</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SEZIONE CATALOGO DONNA -->
+    <section class="catalog-container">
+
+        <!-- PRODOTTI -->
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/ADIDAS HANDBALL SPEZIAL WOMAN109,95.webp') }}" alt="Adidas Sleek">
+            <h3>ADIDAS HANDBALL SPEZIAL</h3>
+            <p>Design pulito e femminile, perfetta per un look casual chic.</p>
+            <span class="price">€109,99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome={{ 'ADIDAS HANDBALL SPEZIAL'|urlencode }}&desc={{ 'Design pulito e femminile, perfetta per un look casual chic.'|urlencode }}&prezzo=109.99&img={{ 'EnnoShoes/ADIDAS HANDBALL SPEZIAL WOMAN109,95.webp'|urlencode }}">Acquista</a>
+        </div>
+
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/adidasOGleopard sambawoman.webp') }}" alt="Adidas Forum Bold">
+            <h3>ADIDAS SAMBA OG LEOPARD</h3>
+            <p>Stile moderno con suola platform per un tocco di carattere.</p>
+            <span class="price">€149.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome={{ 'ADIDAS SAMBA OG LEOPARD'|urlencode }}&desc={{ 'Stile moderno con suola platform per un tocco di carattere.'|urlencode }}&prezzo=149.99&img={{ 'EnnoShoes/adidasOGleopard sambawoman.webp'|urlencode }}">Acquista</a>
+        </div>
+
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/ITALIA70s.webp') }}" alt="Adidas Superstar Bold">
+            <h3>ADIDAS ITALIA 70'</h3>
+            <p>Versione femminile e rialzata del classico iconico.</p>
+            <span class="price">€109.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome={{ 'ADIDAS ITALIA 70\''|urlencode }}&desc={{ 'Versione femminile e rialzata del classico iconico.'|urlencode }}&prezzo=109.99&img={{ 'EnnoShoes/ITALIA70s.webp'|urlencode }}">Acquista</a>
+        </div>
+
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/ADIDASTOKYOWOMAN.webp') }}" alt="Adidas Gazelle Pink">
+            <h3>ADIDAS TOKYO </h3>
+            <p>Modello storico in una colorazione femminile irresistibile.</p>
+            <span class="price">€119.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome={{ 'ADIDAS TOKYO'|urlencode }}&desc={{ 'Modello storico in una colorazione femminile irresistibile.'|urlencode }}&prezzo=119.99&img={{ 'EnnoShoes/ADIDASTOKYOWOMAN.webp'|urlencode }}">Acquista</a>
+        </div>
+
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/CAMPUSS00120.webp') }}" alt="Adidas Stan Smith">
+            <h3>ADIDAS CAMPUSS 00'</h3>
+            <p>L’eleganza minimal perfetta per qualsiasi outfit.</p>
+            <span class="price">€119.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome={{ 'ADIDAS CAMPUSS 00\''|urlencode }}&desc={{ 'L’eleganza minimal perfetta per qualsiasi outfit.'|urlencode }}&prezzo=119.99&img={{ 'EnnoShoes/CAMPUSS00120.webp'|urlencode }}">Acquista</a>
+        </div>
+
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/GAZELLEWOMAN89,99.webp') }}" alt="Adidas Campus 00s Pink">
+            <h3>ADIDAS GAZELLE</h3>
+            <p>Trend Y2K con tonalità femminile e stile streetwear.</p>
+            <span class="price">€89.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome={{ 'ADIDAS GAZELLE'|urlencode }}&desc={{ 'Trend Y2K con tonalità femminile e stile streetwear.'|urlencode }}&prezzo=89.99&img={{ 'EnnoShoes/GAZELLEWOMAN89,99.webp'|urlencode }}">Acquista</a>
+        </div>
+
+    </section>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/adidas.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  
+
+</body>
+</html>

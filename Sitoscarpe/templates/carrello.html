@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrello - EnnoShoes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carello.css') }}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">EnnoShoes</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+            <li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </header>
+
+    <main class="cart-container">
+        <h1>Il tuo carrello</h1>
+        <div id="cart-items"></div>
+        <div id="cart-summary">
+            <h3>Totale: €<span id="cart-total">0.00</span></h3>
+            <button id="checkout-btn">Procedi all'acquisto</button>
+        </div>
+        <div id="checkout-msg"></div>
+    </main>
+
+    <script>
+        // Recupera carrello da localStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const cartItemsDiv = document.getElementById("cart-items");
+        const cartTotalSpan = document.getElementById("cart-total");
+        const checkoutBtn = document.getElementById("checkout-btn");
+        const checkoutMsg = document.getElementById("checkout-msg");
+
+        function renderCart() {
+            cartItemsDiv.innerHTML = "";
+            let total = 0;
+
+            if(cart.length === 0){
+                cartItemsDiv.innerHTML = "<p>Il carrello è vuoto.</p>";
+                checkoutBtn.disabled = true;
+                cartTotalSpan.textContent = "0.00";
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const itemTotal = (parseFloat(item.prezzo) * parseInt(item.quantity)).toFixed(2);
+                total += parseFloat(itemTotal);
+
+                const itemDiv = document.createElement("div");
+                itemDiv.className = "cart-item";
+                itemDiv.innerHTML = `
+                    <img src="{{ url_for('static', filename='') }}${item.img}" alt="${item.nome}">
+                    <div class="item-details">
+                        <h4>${item.nome}</h4>
+                        <p>${item.desc}</p>
+                        <p>Taglia: ${item.size || "-"}</p>
+                        <p>Prezzo unitario: €${parseFloat(item.prezzo).toFixed(2)}</p>
+                        <p>Quantità: 
+                            <input type="number" min="1" value="${item.quantity}" data-index="${index}" class="quantity-input">
+                        </p>
+                        <p>Totale: €${itemTotal}</p>
+                        <button class="remove-btn" data-index="${index}">Rimuovi</button>
+                    </div>
+                `;
+                cartItemsDiv.appendChild(itemDiv);
+            });
+
+            cartTotalSpan.textContent = total.toFixed(2);
+
+            // Aggiungi listener per rimuovere
+            document.querySelectorAll(".remove-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const idx = parseInt(btn.dataset.index);
+                    cart.splice(idx, 1);
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    renderCart();
+                });
+            });
+
+            // Aggiungi listener per cambiare quantità
+            document.querySelectorAll(".quantity-input").forEach(input => {
+                input.addEventListener("change", () => {
+                    const idx = parseInt(input.dataset.index);
+                    const val = parseInt(input.value);
+                    if(val < 1) input.value = 1;
+                    cart[idx].quantity = input.value;
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    renderCart();
+                });
+            });
+
+            checkoutBtn.disabled = false;
+        }
+
+        renderCart();
+
+        // Checkout
+        checkoutBtn.addEventListener("click", async () => {
+            if(cart.length === 0) return;
+
+            try {
+                const res = await fetch("/acquista", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ cart })
+                });
+
+                const data = await res.json();
+                if(data.success){
+                    checkoutMsg.innerHTML = `<p style="color:green;">✅ ${data.message}</p>`;
+                    cart = [];
+                    localStorage.removeItem("cart");
+                    renderCart();
+                } else {
+                    checkoutMsg.innerHTML = `<p style="color:red;">❌ Errore: ${data.error || data.message}</p>`;
+                }
+            } catch (err) {
+                checkoutMsg.innerHTML = `<p style="color:red;">❌ Errore di connessione al server</p>`;
+                console.error(err);
+            }
+        });
+    </script>
+
+</body>
+</html>

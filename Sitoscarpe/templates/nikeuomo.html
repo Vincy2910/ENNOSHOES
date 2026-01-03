@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Uomo - EnnoShoes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/NikeUomo.css') }}">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">EnnoShoes</div>
+        <ul class="nav-links">
+           
+            <li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Contact.html') }}">Contatti</a></li>
+            <li><a href="{{ url_for('serve_page', filename='TerminiCondizioni.html') }}">Termini e Condizioni</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+            <li><a href="{{ url_for('login_page') }}">Accedi</a></li>
+            <li><a href="{{ url_for('register_page') }}">Registrati</a></li>
+        </ul>
+    </header>
+
+    <!-- HEADER -->
+    <header class="brand-header">
+        <h1>Nike – Uomo</h1>
+        <p>Scopri le ultime novità del brand Nike per uomo.</p>
+    </header>
+
+    <!-- SEZIONE PRODOTTI -->
+    <section class="product-section">
+
+        <!-- PRODOTTO 1 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/NIKE_HOT_STEP_2_DRAKE_NOCTA_MINT_FOAM.webp') }}" alt="Nike Hot Step 2">
+            <h3>NIKE HOT STEP 2 DRAKE NOCTA MINT FOAM</h3>
+            <p>Scarpa iconica di Drake con colori freschi e design accattivante.</p>
+            <span class="price">€370,00</span>
+            <a class="btn-acquista" 
+               href="{{ url_for('serve_page', filename='acquista.html') }}?nome=NIKE%20HOT%20STEP%202%20DRAKE%20NOCTA%20MINT%20FOAM&desc=Scarpa%20iconica%20di%20Drake%20con%20colori%20freschi%20e%20design%20accattivante&prezzo=370&img=EnnoShoes/NIKE_HOT_STEP_2_DRAKE_NOCTA_MINT_FOAM.webp">
+               Acquista
+            </a>
+        </div>
+
+        <!-- PRODOTTO 2 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/nike_shoe3.avif') }}" alt="Nike Air Max 95">
+            <h3>NIKE AIR MAX 95 "BIG BUBBLE"</h3>
+            <p>Comfort e stile unici con la nuova tecnologia Big Bubble.</p>
+            <span class="price">€189,99</span>
+            <a class="btn-acquista" 
+               href="{{ url_for('serve_page', filename='acquista.html') }}?nome=NIKE%20AIR%20MAX%2095%20BIG%20BUBBLE&desc=Comfort%20e%20stile%20unici%20con%20la%20nuova%20tecnologia%20Big%20Bubble&prezzo=189.99&img=EnnoShoes/nike_shoe3.avif">
+               Acquista
+            </a>
+        </div>
+
+        <!-- PRODOTTO 3 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/NIKE+DUNK+HI+RETRO 129,99.avif') }}" alt="Nike Dunk Hi Retro">
+            <h3>NIKE DUNK HI RETRO</h3>
+            <p>Breve descrizione della scarpa 3.</p>
+            <span class="price">€129,00</span>
+            <a class="btn-acquista" 
+               href="{{ url_for('serve_page', filename='acquista.html') }}?nome=NIKE%20DUNK%20HI%20RETRO&desc=Breve%20descrizione%20della%20scarpa%203&prezzo=129&img=EnnoShoes/NIKE+DUNK+HI+RETRO%20129,99.avif">
+               Acquista
+            </a>
+        </div>
+
+        <!-- PRODOTTO 4 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/NIKE+PEGASUS+PREMIUM 209,99.avif') }}" alt="Nike Pegasus Premium">
+            <h3>NIKE PEGASUS PREMIUM</h3>
+            <p>Breve descrizione della scarpa 4.</p>
+            <span class="price">€209,00</span>
+            <a class="btn-acquista" 
+               href="{{ url_for('serve_page', filename='acquista.html') }}?nome=NIKE%20PEGASUS%20PREMIUM&desc=Breve%20descrizione%20della%20scarpa%204&prezzo=209&img=EnnoShoes/NIKE+PEGASUS+PREMIUM%20209,99.avif">
+               Acquista
+            </a>
+        </div>
+
+        <!-- PRODOTTO 5 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/nike_air_force_1.webp.avif') }}" alt="Nike Air Force 1">
+            <h3>NIKE AIR FORCE 1</h3>
+            <p>Breve descrizione della scarpa 5.</p>
+            <span class="price">€120,00</span>
+            <a class="btn-acquista" 
+               href="{{ url_for('serve_page', filename='acquista.html') }}?nome=NIKE%20AIR%20FORCE%201&desc=Breve%20descrizione%20della%20scarpa%205&prezzo=120&img=EnnoShoes/nike_air_force_1.webp.avif">
+               Acquista
+            </a>
+        </div>
+
+        <!-- PRODOTTO 6 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/Nike Air Max 95 199,99.avif') }}" alt="Nike Air Max 95">
+            <h3>NIKE AIR MAX 95</h3>
+            <p>Breve descrizione della scarpa 6.</p>
+            <span class="price">€199,00</span>
+            <a class="btn-acquista" 
+               href="{{ url_for('serve_page', filename='acquista.html') }}?nome=NIKE%20AIR%20MAX%2095&desc=Breve%20descrizione%20della%20scarpa%206&prezzo=199&img=EnnoShoes/Nike%20Air%20Max%2095%20199,99.avif">
+               Acquista
+            </a>
+        </div>
+
+    </section>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/nike.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

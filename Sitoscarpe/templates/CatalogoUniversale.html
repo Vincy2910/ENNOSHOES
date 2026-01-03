@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo Universale</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/CatalogoUniversale.css') }}">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">EnnoShoes</div>
+        <nav>
+           
+            <li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Contact.html') }}">Contatti</a></li>
+            <li><a href="{{ url_for('serve_page', filename='TerminiCondizioni.html') }}">Termini e Condizioni</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+            <li><a href="{{ url_for('login_page') }}">Accedi</a></li>
+            <li><a href="{{ url_for('register_page') }}">Registrati</a></li>
+        </nav>
+    </header>
+
+    <!-- SEZIONE SELEZIONE GENERE -->
+    <section class="gender-section">
+        <h1>Catalogo Universe</h1>
+        <p>Scegli il reparto per scoprire le collezioni sportive</p>
+
+        <div class="gender-buttons">
+            <a href="#uomo" class="gender-btn uomo">UOMO</a>
+            <a href="#donna" class="gender-btn donna">DONNA</a>
+        </div>
+    </section>
+
+    <!-- SEZIONE MARCHI UOMO -->
+    <section class="brands-section" id="uomo">
+        <h2>Marchi Uomo</h2>
+        <div class="brands-container">
+            <a href="{{ url_for('serve_page', filename='nikeuomo.html') }}" class="brand-card product">
+                <img src="{{ url_for('static', filename='EnnoShoes/logonike.jpg') }}" alt="Nike Logo">
+                <span>NIKE</span>
+            </a>
+
+            <a href="{{ url_for('serve_page', filename='jordanuomo.html') }}" class="brand-card product">
+                <img src="{{ url_for('static', filename='EnnoShoes/jordanlogo.png') }}" alt="Jordan Logo">
+                <span>JORDAN</span>
+            </a>
+
+            <a href="{{ url_for('serve_page', filename='adidasuomo.html') }}" class="brand-card product">
+                <img src="{{ url_for('static', filename='EnnoShoes/LOGOADIUOMO.jpg') }}" alt="Adidas Logo">
+                <span>ADIDAS</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- SEZIONE MARCHI DONNA -->
+    <section class="brands-section" id="donna">
+        <h2>Marchi Donna</h2>
+        <div class="brands-container">
+            <a href="{{ url_for('serve_page', filename='nikedonna.html') }}" class="brand-card product">
+                <img src="{{ url_for('static', filename='EnnoShoes/logoniked.png') }}" alt="Nike Logo">
+                <span>NIKE</span>
+            </a>
+
+            <a href="{{ url_for('serve_page', filename='jordandonna.html') }}" class="brand-card product">
+                <img src="{{ url_for('static', filename='EnnoShoes/logojordanw.jpg') }}" alt="Jordan Logo">
+                <span>JORDAN</span>
+            </a>
+
+            <a href="{{ url_for('serve_page', filename='adidasDonna.html') }}" class="brand-card product">
+                <img src="{{ url_for('static', filename='EnnoShoes/LOGOADIDONNA.jpg') }}" alt="Adidas Logo">
+                <span>ADIDAS</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/CatalogoUniversale.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

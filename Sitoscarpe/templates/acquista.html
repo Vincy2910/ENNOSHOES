@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acquista - EnnoShoes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/acquista.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">EnnoShoes</div>
+        <nav>
+            <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+            <li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+            <li><a href="{{ url_for('serve_page', filename='carrello.html') }}">Carrello</a></li>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Prodotto aggiunto al carrello</h1>
+        <div id="product-info"></div>
+        <a href="{{ url_for('serve_page', filename='carrello.html') }}" class="btn-go-cart">Vai al Carrello</a>
+    </main>
+
+    <script>
+        // Legge i parametri dell'URL
+        const params = new URLSearchParams(window.location.search);
+        const product = {
+            nome: params.get("nome"),
+            desc: params.get("desc"),
+            prezzo: parseFloat(params.get("prezzo")),
+            img: params.get("img"),
+            qty: 1
+        };
+
+        // Mostra prodotto aggiunto
+        document.getElementById("product-info").innerHTML = `
+            <img src="${product.img}" alt="${product.nome}" width="200">
+            <h3>${product.nome}</h3>
+            <p>${product.desc}</p>
+            <p>Prezzo: €${product.prezzo.toFixed(2)}</p>
+        `;
+
+        // Salva prodotto nel carrello (localStorage)
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const existing = cart.find(p => p.nome === product.nome);
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push(product);
+        }
+        localStorage.setItem("cart", JSON.stringify(cart));
+    </script>
+</body>
+</html>

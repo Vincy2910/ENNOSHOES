@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StepUp</title>
+
+  <!-- CSS servito da Flask: /css/<file> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/Home.css') }}">
+
+ 
+
+<body>
+  <header>
+    <div class="logo">EnnoShoes</div>
+
+   
+
+    <nav>
+      <ul>
+    
+<li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+<li><a href="{{ url_for('serve_page', filename='Contact.html') }}">Contatti</a></li>
+<li><a href="{{ url_for('serve_page', filename='TerminiCondizioni.html') }}">Termini e Condizioni</a></li>
+ <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+<li><a href="{{ url_for('login_page') }}">Accedi</a></li>
+<li><a href="{{ url_for('register_page') }}">Registrati</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Benvenuto su EnnoShoes!</h1>
+      <p>Le scarpe che cercavi, comode e sempre alla moda.</p>
+      
+    </section>
+
+    <section class="brand-logos sport-brands">
+      <h2>Marchi Sportivi</h2>
+      <div class="logos-container" id="sport-brands">
+        <a href="/p/CatalogoUniversale.html" class="brand-btn sport">Nike</a>
+        <a href="/p/CatalogoUniversale.html" class="brand-btn sport">Jordan</a>
+        <a href="/p/CatalogoUniversale.html" class="brand-btn sport">Adidas</a>
+      </div>
+    </section>
+
+    
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

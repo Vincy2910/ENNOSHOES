@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Donna - EnnoShoes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/NikeDonna.css') }}">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">EnnoShoes</div>
+        <ul class="nav-links">
+           
+            <li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Contact.html') }}">Contatti</a></li>
+            <li><a href="{{ url_for('serve_page', filename='TerminiCondizioni.html') }}">Termini e Condizioni</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+            <li><a href="{{ url_for('login_page') }}">Accedi</a></li>
+            <li><a href="{{ url_for('register_page') }}">Registrati</a></li>
+        </ul>
+    </header>
+
+    <header class="brand-header">
+        <h1>Nike – Donna</h1>
+    </header>
+
+    <!-- SEZIONE PRODOTTI -->
+    <section class="product-section">
+
+        <!-- PRODOTTO 1 -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='EnnoShoes/W+AF1+SHADOW109,99D.avif') }}" alt="Air Force 1 Shadow">
+            <h3>AIR FORCE 1 SHADOW</h3>
+            <p class="desc">Design moderno e comodo per la vita urbana.</p>
+            <span class="price">€109.99</span>
+            <a class="btn-buy" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20FORCE%201%20SHADOW&desc=Design%20moderno%20e%20comodo%20per%20la%20vita%20urbana&prezzo=109.99&img=EnnoShoes/W+AF1+SHADOW109,99D.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 2 -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='EnnoShoes/W+AIR+FORCE+1+07+VINTAGE99,99D.avif') }}" alt="Air Force 1'07 Vintage">
+            <h3>AIR FORCE 1'07 VINTAGE</h3>
+            <p class="desc">Look classico con dettagli vintage e comfort superiore.</p>
+            <span class="price">€99.99</span>
+            <a class="btn-buy" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20FORCE%201'07%20VINTAGE&desc=Look%20classico%20con%20dettagli%20vintage%20e%20comfort%20superiore&prezzo=99.99&img=EnnoShoes/W+AIR+FORCE+1+07+VINTAGE99,99D.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 3 -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='EnnoShoes/W+AIR+FORCE+1+07129,99D.avif') }}" alt="Air Force 1'07 Leopard">
+            <h3>AIR FORCE 1'07 LEOPARD</h3>
+            <p class="desc">Design audace con stampa leopardata e comfort premium.</p>
+            <span class="price">€129.99</span>
+            <a class="btn-buy" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20FORCE%201'07%20LEOPARD&desc=Design%20audace%20con%20stampa%20leopardata%20e%20comfort%20premium&prezzo=129.99&img=EnnoShoes/W+AIR+FORCE+1+07129,99D.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 4 -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='EnnoShoes/W+NIKE+CORTEZLEATHER99,99D.avif') }}" alt="Nike Cortez Leather">
+            <h3>NIKE CORTEZ LEATHER</h3>
+            <p class="desc">Classico intramontabile, perfetto per ogni outfit casual.</p>
+            <span class="price">€99.99</span>
+            <a class="btn-buy" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=NIKE%20CORTEZ%20LEATHER&desc=Classico%20intramontabile,%20perfetto%20per%20ogni%20outfit%20casual&prezzo=99.99&img=EnnoShoes/W+NIKE+CORTEZLEATHER99,99D.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 5 -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='EnnoShoes/WMNS+AIR+FORCE+1+07119,99D.avif') }}" alt="Air Force 1'07 Pink">
+            <h3>AIR FORCE 1'07 PINK</h3>
+            <p class="desc">Colorazione femminile con comfort e stile.</p>
+            <span class="price">€119.99</span>
+            <a class="btn-buy" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20FORCE%201'07%20PINK&desc=Colorazione%20femminile%20con%20comfort%20e%20stile&prezzo=119.99&img=EnnoShoes/WMNS+AIR+FORCE+1+07119,99D.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 6 -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='EnnoShoes/W+NIKE+SHOX+TL159,99.avif') }}" alt="Nike Shox TL">
+            <h3>NIKE SHOX TL</h3>
+            <p class="desc">Massima ammortizzazione e stile moderno.</p>
+            <span class="price">€159.99</span>
+            <a class="btn-buy" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=NIKE%20SHOX%20TL&desc=Massima%20ammortizzazione%20e%20stile%20moderno&prezzo=159.99&img=EnnoShoes/W+NIKE+SHOX+TL159,99.avif">Acquista</a>
+        </div>
+
+    </section>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/nike.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Uomo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jordanuomo.css') }}">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <h1>JORDAN - UOMO</h1>
+        <nav>
+
+            <li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Contact.html') }}">Contatti</a></li>
+            <li><a href="{{ url_for('serve_page', filename='TerminiCondizioni.html') }}">Termini e Condizioni</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+            <li><a href="{{ url_for('login_page') }}">Accedi</a></li>
+            <li><a href="{{ url_for('register_page') }}">Registrati</a></li>
+        </nav>
+    </header>
+
+    <!-- SEZIONE PRODOTTI -->
+    <section class="catalog-container">
+
+        <!-- PRODOTTO 1 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/AIR+JORDAN+1+RETRO+LOW+95.99GAMEROYALE.avif') }}" alt="Air Jordan 1 High">
+            <h3>AIR JORDAN 1 RETRO LOW</h3>
+            <p>Iconica sneaker da basket con stile senza tempo.</p>
+            <span class="price">€95.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20RETRO%20LOW&desc=Iconica%20sneaker%20da%20basket%20con%20stile%20senza%20tempo.&prezzo=95.99&img=EnnoShoes/AIR+JORDAN+1+RETRO+LOW+95.99GAMEROYALE.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 2 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/AIR JORDAN 1 LOW SE.avif') }}" alt="Air Jordan 1 Low SE">
+            <h3>AIR JORDAN 1 LOW SE</h3>
+            <p>Stile street con dettagli premium e comfort superiore.</p>
+            <span class="price">€159.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20LOW%20SE&desc=Stile%20street%20con%20dettagli%20premium%20e%20comfort%20superiore.&prezzo=159.99&img=EnnoShoes/AIR%20JORDAN%201%20LOW%20SE.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 3 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/AIR+JORDAN+1+MID 129,99.avif') }}" alt="Air Jordan 1 Mid">
+            <h3>AIR JORDAN 1 MID</h3>
+            <p>Design storico con iconico elephant-print.</p>
+            <span class="price">€129.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20MID&desc=Design%20storico%20con%20iconico%20elephant-print.&prezzo=129.99&img=EnnoShoes/AIR+JORDAN+1+MID%20129.99.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 4 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/AIR+JORDAN+1+MID 139,99.avif') }}" alt="Air Jordan 1 Mid">
+            <h3>AIR JORDAN 1 MID</h3>
+            <p>Perfetta per look sportivi e street fashion.</p>
+            <span class="price">€139.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20MID&desc=Perfetta%20per%20look%20sportivi%20e%20street%20fashion.&prezzo=139.99&img=EnnoShoes/AIR+JORDAN+1+MID%20139.99.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 5 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/AIR+JORDAN+1+MID+SE 149,99.avif') }}" alt="Air Jordan 1 Mid SE">
+            <h3>AIR JORDAN 1 MID SE</h3>
+            <p>Dettagli laser incisi e design unico nel suo genere.</p>
+            <span class="price">€149.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20MID%20SE&desc=Dettagli%20laser%20incisi%20e%20design%20unico%20nel%20suo%20genere.&prezzo=149.99&img=EnnoShoes/AIR+JORDAN+1+MID+SE%20149.99.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 6 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/AIR+JORDAN+1+MIDWHITE135,99.avif') }}" alt="Air Jordan 1 Mid White">
+            <h3>AIR JORDAN 1 MID WHITE</h3>
+            <p>Ispirata al DNA Jordan, pensata per performance e stile.</p>
+            <span class="price">€135.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20MID%20WHITE&desc=Ispirata%20al%20DNA%20Jordan,%20pensata%20per%20performance%20e%20stile.&prezzo=135.99&img=EnnoShoes/AIR+JORDAN+1+MIDWHITE135.99.avif">Acquista</a>
+        </div>
+
+    </section>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/jordan.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+/* ===============================
+   RESET & BASE
+================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ff7a00, #ff3c00);
+    color: #fff4e6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===============================
+   HEADER & NAV
+================================*/
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(90deg, #ff4d4d, #ff9900);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s, color 0.2s;
+}
+
+header nav ul li a:hover {
+    color: black;
+    transform: scale(1.1);
+}
+
+.login-btn {
+    background-color: white;
+    color: #ff4d4d;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.login-btn:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+
+
+/* ===============================
+   HERO SECTION
+================================*/
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(to right, #ff4d4d, #ff9900);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+/* ===============================
+   BRAND LOGOS
+================================*/
+.brand-logos {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.brand-logos h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.logos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.brand-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.brand-btn.sport {
+    background: linear-gradient(135deg, #ff4d4d, #ff9900);
+}
+
+.brand-btn.sport:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffcc00;
+}
+
+
+
+/* ===============================
+   PROMO WHEEL
+================================*/
+.promo-wheel {
+    text-align: center;
+    background: linear-gradient(90deg, #ff4d4d, #ff9900);
+    color: white;
+    padding: 60px 20px;
+    margin-top: 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.promo-wheel h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.promo-wheel p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.wheel-btn {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.wheel-btn:hover {
+    background-color: #ffcc00;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* ===============================
+   RESPONSIVE
+================================*/
+@media(max-width:768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+    .search-bar input {
+        width: 180px;
+    }
+    .hero {
+        padding: 80px 15px;
+    }
+    .logos-container {
+        gap: 15px;
+    }
+}
+ 
+
+/* ===============================
+   HIGHLIGHT SEARCH RESULTS
+================================*/
+.brand-btn.highlighted {
+    background-color: #ffcc00 !important;
+    color: black !important;
+    transform: scale(1.15);
+    box-shadow: 0 0 15px #fff;
+    transition: all 0.3s ease;
+}
+
+

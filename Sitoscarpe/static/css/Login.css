@@ -1,0 +1,181 @@
+/* ===============================
+   RESET & BASE
+================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ff7a00, #ff3c00);
+    color: #fff4e6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===============================
+   HEADER
+================================*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(90deg, #ff4d4d, #ff9900);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+header nav ul li a,
+header nav a.login-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav a.login-btn:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+/* ===============================
+   LOGIN SECTION
+================================*/
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 80px 20px;
+}
+
+.login-container {
+    background: linear-gradient(135deg, #ff4d4d, #ff9900);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-container h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+/* ===============================
+   FORM ELEMENTS
+================================*/
+.login-container input,
+.login-container select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(0,0,0,0.25);
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.login-container input::placeholder,
+.login-container select {
+    color: lightgrey;
+}
+
+.login-container input:focus,
+.login-container select:focus {
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* ===============================
+   BUTTON
+================================*/
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: white;
+    color: #ff4d4d;
+    transform: scale(1.05);
+}
+
+/* ===============================
+   TEXT BELOW FORM
+================================*/
+.login-container p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-container p a {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.login-container p a:hover {
+    color: black;
+}
+
+/* ===============================
+   FOOTER
+================================*/
+footer {
+    background: linear-gradient(90deg, #ff4d4d, #ff9900);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.2);
+}
+
+/* ===============================
+   RESPONSIVE
+================================*/
+@media(max-width:768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .login-container {
+        padding: 30px 20px;
+    }
+
+    .login-section {
+        padding: 60px 15px;
+    }
+}

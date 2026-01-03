@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrazione - Ennoshoes</title>
+
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/Registrazione.css') }}">
+</head>
+
+<body>
+  <header>
+    <div class="logo">Ennoshoes</div>
+    <nav>
+      <ul>
+
+<li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+<li><a href="{{ url_for('serve_page', filename='Contact.html') }}">Contatti</a></li>
+<li><a href="{{ url_for('serve_page', filename='TerminiCondizioni.html') }}">Termini e Condizioni</a></li>
+ <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+<li><a href="{{ url_for('login_page') }}">Accedi</a></li>
+<li><a href="{{ url_for('register_page') }}">Registrati</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="login-section">
+    <div class="login-container">
+      <h2>Crea un nuovo account</h2>
+
+      <form id="registration-form" action="/register" method="post">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="text" name="cognome" placeholder="Cognome" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirm_password" placeholder="Conferma Password" required>
+
+        <select name="role" id="role-select" required>
+          <option value="">Seleziona ruolo</option>
+          <option value="cliente">Cliente</option>
+          <option value="lavoratore">Lavoratore</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <input
+          type="text"
+          name="secret_code"
+          id="secret-code"
+          placeholder="Inserisci codice segreto"
+          style="display:none;"
+        >
+
+        <button type="submit" class="btn-login">Registrati</button>
+      </form>
+
+      <p>Hai già un account? <a href="/login_page">Accedi qui</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ennoshoes. Tutti i diritti riservati.</p>
+  </footer>
+
+  <!-- Flask serve i JS così: /js/<file> -->
+ <script src="{{ url_for('static', filename='js/Registrazione.js') }}"></script>
+</body>
+</html>

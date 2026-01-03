@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Ennoshoes</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/Login.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">Ennoshoes</div>
+    <nav>
+        <ul>
+            
+<li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+<li><a href="{{ url_for('serve_page', filename='Contact.html') }}">Contatti</a></li>
+<li><a href="{{ url_for('serve_page', filename='TerminiCondizioni.html') }}">Termini e Condizioni</a></li>
+ <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+<li><a href="{{ url_for('login_page') }}">Accedi</a></li>
+<li><a href="{{ url_for('register_page') }}">Registrati</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="login-section">
+    <div class="login-container">
+        <h2>Accedi al tuo account</h2>
+        <form action="/login" method="post">
+            <input type="email" name="email" placeholder="Email" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <select name="role" required>
+                <option value="">Seleziona ruolo</option>
+                <option value="cliente">Cliente</option>
+                <option value="lavoratore">Lavoratore</option>
+                <option value="admin">Admin</option>
+            </select><br>
+            <button type="submit">Accedi</button>
+        </form>
+        <p>Non hai un account? <a href="/register_page">Registrati qui</a></p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Ennoshoes. Tutti i diritti riservati.</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/Login.js') }}"></script>
+</body>
+</html>

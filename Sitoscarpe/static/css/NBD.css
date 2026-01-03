@@ -1,0 +1,126 @@
+/* ===============================
+   RESET & BASE
+================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ffffff; /* bianco */
+    color: #333;
+    min-height: 100vh;
+}
+
+/* ===============================
+   HEADER & NAVBAR
+================================*/
+header {
+    text-align: center;
+    background-color: #6a1b9a; /* viola scuro */
+    padding: 20px 0;
+}
+
+header h1 {
+    color: #ffffff; /* bianco */
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #ffffff; /* bianco */
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ce93d8; /* viola chiaro al passaggio */
+}
+
+/* ===============================
+   SEZIONE CATALOGO
+================================*/
+.catalog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px 20px;
+}
+
+/* CARD PRODOTTO */
+.card {
+    background-color: #ffffff; /* bianco */
+    border: 2px solid #6a1b9a; /* bordo viola */
+    border-radius: 12px;
+    width: 250px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(106, 27, 154, 0.3); /* ombra viola chiara */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #6a1b9a; /* viola */
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #6a1b9a; /* viola */
+    display: block;
+    margin-bottom: 10px;
+}
+
+.btn-acquista {
+    display: inline-block;
+    background-color: #6a1b9a; /* viola */
+    color: #ffffff; /* bianco */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-acquista:hover {
+    background-color: #ce93d8; /* viola chiaro */
+    transform: scale(1.05);
+}
+
+/* ===============================
+   RESPONSIVE
+================================*/
+@media (max-width: 768px) {
+    .catalog-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+    }
+}

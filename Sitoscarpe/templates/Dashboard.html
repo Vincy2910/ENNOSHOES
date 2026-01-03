@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Area Personale - EnnoShoes</title>
+
+  <!-- collega il CSS -->
+  
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/Dashboard.css') }}">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">EnnoShoes</div>
+    <ul class="nav-links">
+
+<li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+<li><a href="{{ url_for('serve_page', filename='Contact.html') }}">Contatti</a></li>
+<li><a href="{{ url_for('serve_page', filename='TerminiCondizioni.html') }}">Termini e Condizioni</a></li>
+ <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+<li><a href="{{ url_for('login_page') }}">Accedi</a></li>
+<li><a href="{{ url_for('register_page') }}">Registrati</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER / HERO -->
+  <header class="dash-hero">
+    <div class="container">
+      <h1>La tua area personale</h1>
+      <p>Benvenuto! Qui trovi ordini, preferiti e impostazioni del profilo.</p>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container dashboard-grid">
+
+    <!-- COLONNA SINISTRA: profilo rapido -->
+    <aside class="panel profile-panel">
+      <div class="avatar">
+        <!-- img src vuoto pronto per essere sostituito o aggiornato da JS -->
+        <img id="profile-pic" src="" alt="Foto profilo (inserisci immagine)">
+      </div>
+
+      <!-- Questi elementi verranno popolati da JavaScript in futuro -->
+      <h2 id="user-name">Nome Cognome</h2>               <!-- JS: document.getElementById('user-name').textContent = ... -->
+      <p id="user-email">email@example.com</p>          <!-- JS: document.getElementById('user-email') -->
+
+      <div class="mini-actions">
+        <a href="#" class="btn btn-outline" id="edit-profile">Modifica profilo</a>
+        <a href="#" class="btn btn-danger" id="logout-btn">Logout</a> <!-- JS: aggiungere listener su questo id -->
+      </div>
+
+      <div class="summary">
+        <div class="summary-item">
+          <span class="num" id="orders-count">0</span>
+          <span class="label">Ordini</span>
+        </div>
+        <div class="summary-item">
+          <span class="num" id="wishlist-count">0</span>
+          <span class="label">Preferiti</span>
+        </div>
+        <div class="summary-item">
+          <span class="num" id="credits">0</span>
+          <span class="label">Crediti</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- COLONNA DESTRA: contenuti (ordini / preferiti / impostazioni) -->
+    <section class="panel content-panel">
+
+      <!-- Sezione Ordini -->
+      <div class="section" id="orders-section">
+        <h3>Ordini recenti</h3>
+        <!-- Qui il JS popolerà <ul id="order-list"> con gli ordini -->
+        <ul id="order-list" class="list-empty">
+          <li>Nessun ordine recente. <a href="catalogo-uomo.html">Scopri prodotti</a></li>
+        </ul>
+      </div>
+
+      <!-- Sezione Preferiti -->
+      <div class="section" id="wishlist-section">
+        <h3>I tuoi preferiti</h3>
+        <div id="wishlist-grid" class="products-grid">
+          <!-- Card placeholder: il JS potrà clonare/riempire -->
+          <div class="fav-empty">Nessun preferito. Aggiungi prodotti alla lista!</div>
+        </div>
+      </div>
+
+      <!-- Sezione Impostazioni (contenitore per impostazioni future) -->
+      <div class="section" id="settings-section">
+        <h3>Impostazioni account</h3>
+        <div class="settings-row">
+          <label>Notifiche email</label>
+          <span class="muted">Attivabile in futuro</span>
+        </div>
+        <div class="settings-row">
+          <label>Indirizzo di consegna</label>
+          <span class="muted">Non impostato</span>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 EnnoShoes - Tutti i diritti riservati</p>
+  </footer>
+
+  <!-- NOTE: Nessun JS al momento. In futuro aggiungi uno script che:
+       - recupera le credenziali salvate (localStorage / backend)
+       - riempie #user-name, #user-email, #profile-pic
+       - genera gli <li> dentro #order-list e le card in #wishlist-grid
+       - gestisce il click su #logout-btn e #edit-profile
+  -->
+<script src="{{ url_for('static', filename='js/Dashboard.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Registrazione.js') }}"></script>
+<script src="{{ url_for('static', filename='js/Loginjs') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</body>
+</html>

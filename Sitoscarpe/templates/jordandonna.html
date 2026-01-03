@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Donna</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jordandonna.css') }}">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <h1>JORDAN - DONNA</h1>
+        <nav>
+           
+            <li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Contact.html') }}">Contatti</a></li>
+            <li><a href="{{ url_for('serve_page', filename='TerminiCondizioni.html') }}">Termini e Condizioni</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+            <li><a href="{{ url_for('login_page') }}">Accedi</a></li>
+            <li><a href="{{ url_for('register_page') }}">Registrati</a></li>
+        </nav>
+    </header>
+
+    <!-- SEZIONE PRODOTTI -->
+    <section class="catalog-container">
+
+        <!-- PRODOTTO 1 -->
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/WMNS+AIR+JORDAN+1+LOW+SE119,99D.avif') }}" alt="Air Jordan 1 Mid Pink">
+            <h3>AIR JORDAN 1 LOW SE</h3>
+            <p>Iconica silhouette AJ1 in una colorazione femminile unica.</p>
+            <span class="price">€119.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20LOW%20SE&desc=Iconica%20silhouette%20AJ1%20in%20una%20colorazione%20femminile%20unica.&prezzo=119.99&img=EnnoShoes/WMNS+AIR+JORDAN+1+LOW+SE119.99D.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 2 -->
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/WMNS+AIR+JORDAN+1+LOW+SE129.99.avif') }}" alt="Air Jordan 1 Low Rose">
+            <h3>AIR JORDAN 1 LOW SE</h3>
+            <p>Comfort e stile quotidiano per outfit streetwear.</p>
+            <span class="price">€129.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20LOW%20SE&desc=Comfort%20e%20stile%20quotidiano%20per%20outfit%20streetwear.&prezzo=129.99&img=EnnoShoes/WMNS+AIR+JORDAN+1+LOW+SE129.99.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 3 -->
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/WMNS+AIR+JORDAN+1+MID+SE129,99D.avif') }}" alt="Jordan MA2 Pink">
+            <h3>AIR JORDAN 1 MID SE</h3>
+            <p>Moderna, versatile e perfetta per la vita urbana.</p>
+            <span class="price">€129.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20MID%20SE&desc=Moderna,%20versatile%20e%20perfetta%20per%20la%20vita%20urbana.&prezzo=129.99&img=EnnoShoes/WMNS+AIR+JORDAN+1+MID+SE129.99D.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 4 -->
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/WMNS+AIR+JORDAN+1+MID+SE149,99.avif') }}" alt="Jordan Delta 3">
+            <h3>AIR JORDAN 1 MID SE</h3>
+            <p>Look tech e suola super confortevole.</p>
+            <span class="price">€149.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20MID%20SE&desc=Look%20tech%20e%20suola%20super%20confortevole.&prezzo=149.99&img=EnnoShoes/WMNS+AIR+JORDAN+1+MID+SE149.99.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 5 -->
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/WMNS+AIR+JORDAN+1+MID139,99D.avif') }}" alt="Jordan Stadium 90">
+            <h3>AIR JORDAN 1 MID</h3>
+            <p>Ispirata alle storiche AJ, con un tocco moderno.</p>
+            <span class="price">€139.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20MID&desc=Ispirata%20alle%20storiche%20AJ,%20con%20un%20tocco%20moderno.&prezzo=139.99&img=EnnoShoes/WMNS+AIR+JORDAN+1+MID139.99D.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 6 -->
+        <div class="card donna-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/WMNS+AIR+JORDAN+1+RETRO+HIGH+OGPROGREEN179,99D.avif') }}" alt="Jordan Air 200">
+            <h3>AIR JORDAN 1 RETRO HIGH OG RO GREEN</h3>
+            <p>Stile e performance con dettagli premium.</p>
+            <span class="price">€179.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=AIR%20JORDAN%201%20RETRO%20HIGH%20OG%20RO%20GREEN&desc=Stile%20e%20performance%20con%20dettagli%20premium.&prezzo=179.99&img=EnnoShoes/WMNS+AIR+JORDAN+1+RETRO+HIGH+OGPROGREEN179.99D.avif">Acquista</a>
+        </div>
+
+    </section>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/jordan.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
+

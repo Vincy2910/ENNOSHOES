@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adidas Uomo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/adidasU.css') }}">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">EnnoShoes</div>
+        <nav>
+           
+            <li><a href="{{ url_for('serve_page', filename='CatalogoUniversale.html') }}">Catalogo</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Contact.html') }}">Contatti</a></li>
+            <li><a href="{{ url_for('serve_page', filename='TerminiCondizioni.html') }}">Termini e Condizioni</a></li>
+            <li><a href="{{ url_for('serve_page', filename='Home.html') }}">Home</a></li>
+            <li><a href="{{ url_for('login_page') }}">Accedi</a></li>
+            <li><a href="{{ url_for('register_page') }}">Registrati</a></li>
+        </nav>
+    </header>
+
+    <!-- SEZIONE PRODOTTI -->
+    <section class="catalog-container">
+
+        <!-- PRODOTTO 1 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/adidas forum 60.webp') }}" alt="Adidas Pro Model">
+            <h3>ADIDAS FORUM</h3>
+            <p>Classico stile streetwear con tomaia in pelle premium.</p>
+            <span class="price">€60,00</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=ADIDAS%20FORUM&desc=Classico%20stile%20streetwear%20con%20tomaia%20in%20pelle%20premium.&prezzo=60.00&img=EnnoShoes/adidas%20forum%2060.webp">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 2 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/adidascampus00120.webp') }}" alt="Adidas Forum Low">
+            <h3>ADIDAS CAMPUS 00'</h3>
+            <p>Iconica sneaker anni '80 tornata alla ribalta.</p>
+            <span class="price">€119.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=ADIDAS%20CAMPUS%2000'&desc=Iconica%20sneaker%20anni%20'80%20tornata%20alla%20ribalta.&prezzo=119.99&img=EnnoShoes/adidascampus00120.webp">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 3 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/scarpe-jp-samba130.avif') }}" alt="Adidas Superstar">
+            <h3>ADIDAS SAMBA</h3>
+            <p>Storica silhouette con punta a conchiglia.</p>
+            <span class="price">€129.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=ADIDAS%20SAMBA&desc=Storica%20silhouette%20con%20punta%20a%20conchiglia.&prezzo=129.99&img=EnnoShoes/scarpe-jp-samba130.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 4 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/scarpe-handball-spezial110.avif') }}" alt="Adidas Yeezy 350">
+            <h3>ADIDAS HANDBALL SPEZIAL</h3>
+            <p>Design moderno con tecnologia Boost ultra comfort.</p>
+            <span class="price">€109.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=ADIDAS%20HANDBALL%20SPEZIAL&desc=Design%20moderno%20con%20tecnologia%20Boost%20ultra%20comfort.&prezzo=109.99&img=EnnoShoes/scarpe-handball-spezial110.avif">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 5 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/sambaOGNordeux.webp') }}" alt="Adidas Gazelle">
+            <h3>ADIDAS SAMBA BORDEUX</h3>
+            <p>Design classico e versatile, perfetta per ogni outfit.</p>
+            <span class="price">€120,00</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=ADIDAS%20SAMBA%20BORDEUX&desc=Design%20classico%20e%20versatile,%20perfetta%20per%20ogni%20outfit.&prezzo=120.00&img=EnnoShoes/sambaOGNordeux.webp">Acquista</a>
+        </div>
+
+        <!-- PRODOTTO 6 -->
+        <div class="card uomo-card">
+            <img src="{{ url_for('static', filename='EnnoShoes/GAZELLEUNISEX120.webp') }}" alt="Adidas Campus 00s">
+            <h3>ADIDAS GAZZELLE</h3>
+            <p>Modello vintage rivisitato per un look urban moderno.</p>
+            <span class="price">€119.99</span>
+            <a class="btn-acquista" href="{{ url_for('serve_page', filename='acquista.html') }}?nome=ADIDAS%20GAZZELLE&desc=Modello%20vintage%20rivisitato%20per%20un%20look%20urban%20moderno.&prezzo=119.99&img=EnnoShoes/GAZELLEUNISEX120.webp">Acquista</a>
+        </div>
+
+    </section>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/adidas.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
